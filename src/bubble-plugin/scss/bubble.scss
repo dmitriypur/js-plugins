@@ -1,6 +1,5 @@
 .bubbles {
   position: absolute;
-  background: #676666;
   left: 0;
   top: 0;
   width: 100%;
@@ -19,7 +18,7 @@
     animation-name: bubble;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-duration: 30s;
+    animation-duration: 100s;
   }
 
   &#bubbles-1{
@@ -39,6 +38,16 @@
   @keyframes bubble {
     to {
       top: -10%;
+    }
+  }
+}
+
+.dark-theme{
+  .bubbles{
+    .bubble{
+      background: linear-gradient(308.25deg, rgba(222, 205, 239, 0.06) 11.64%, rgba(255, 255, 255, 0.088) 43.59%, rgba(222, 205, 239, 0.1) 62.58%, rgba(222, 205, 239, 0.106) 68.63%, rgba(222, 205, 239, 0.122) 77.26%, rgba(222, 205, 239, 0.148) 87.62%, rgba(222, 205, 239, 0.18) 97.99%);
+      border: 2px solid #FFFFFF40;
+      ;
     }
   }
 }

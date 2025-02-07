@@ -7,7 +7,7 @@ export default class Bubble{
         to: 200
       },
       class: 'a',
-      delays: 2,
+      delays: 1,
       isBottom: true,
     }
 
@@ -68,14 +68,3 @@ export default class Bubble{
     }
   }
 }
-
-
-let b1 = new Bubble('#bubbles-bottom', {
-  count: 20,
-  class: 'b'
-});
-
-let b2 = new Bubble('#bubbles-1', {
-  class: 'a',
-  isBottom: false,
-})
