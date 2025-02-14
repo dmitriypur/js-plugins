@@ -7,7 +7,8 @@ export default class CarouselSlider{
         next: ''
       },
       speed: 3000,
-      autoplay: false
+      autoplay: false,
+      toRight: false
     }
     this.options = Object.assign(defaultOptions, options);
     this.slider = document.querySelector(selector);
@@ -22,7 +23,7 @@ export default class CarouselSlider{
 
     if(self.options.autoplay){
       self.sliderInterval = setInterval(function(){
-        self.nextSlide()
+        self.options.toRight ? self.prevSlide() : self.nextSlide();
       }, self.options.speed);
     }
     
@@ -45,7 +46,7 @@ export default class CarouselSlider{
     let self = this;
     clearInterval(self.sliderInterval);
     self.sliderInterval = setInterval(function(){
-      self.nextSlide();
+      self.options.toRight ? self.prevSlide() : self.nextSlide();
     }, self.options.speed)
   }
 
@@ -58,12 +59,3 @@ export default class CarouselSlider{
     this.sliderLine.prepend(this.slides[this.slides.length - 1]);
   }
 }
-
-let c1 = new CarouselSlider('.reviews__slider', {
-  buttons: {
-    prev: '.reviews-prev',
-    next: '.reviews-next'
-  },
-  autoplay: true,
-  speed: 5000
-})
